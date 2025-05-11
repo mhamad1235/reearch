@@ -1,4 +1,3 @@
-
 @extends('layouts.app')
 
 @section('content')
@@ -13,10 +12,10 @@
         <div class="col-md-9">
             <div class="card shadow-sm">
                 <div class="card-header bg-light">
-                    <h4>Example Index Page</h4>
+                    <h4>Example Page</h4>
                 </div>
                 <div class="card-body">
-                    <p>This is the main content of the page.</p>
+                    <p>This is the main content area.</p>
                 </div>
             </div>
         </div>

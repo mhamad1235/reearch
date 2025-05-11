@@ -47,6 +47,8 @@
                             </select>
                         </div>
                 
+
+                        
                         <!-- Class -->
                         <div class="mb-3">
                             <label for="class" class="form-label">Class</label>
@@ -56,7 +58,22 @@
                                 @endfor
                             </select>
                         </div>
-                
+                        <div class="form-group">
+                            <label>Assign Classes</label>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <strong>Morning</strong><br>
+                                    <label><input type="checkbox" name="assigned_classes[]" value="Class A - Morning"> Class A</label><br>
+                                    <label><input type="checkbox" name="assigned_classes[]" value="Class B - Morning"> Class B</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <strong>Evening</strong><br>
+                                    <label><input type="checkbox" name="assigned_classes[]" value="Class A - Evening"> Class A</label><br>
+                                    <label><input type="checkbox" name="assigned_classes[]" value="Class B - Evening"> Class B</label>
+                                </div>
+                            </div>
+                        </div>
+                        
                         <!-- Password -->
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>

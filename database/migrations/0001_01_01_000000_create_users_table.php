@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->foreignId('department_id')->nullable()->constrained('departments')->onDelete('set null');
-            $table->enum('class', [1, 2, 3, 4])->nullable(); // Foreign key to departments
+            $table->enum('class', [1, 2, 3, 4])->nullable();
+            $table->json('assigned_classes')->nullable(); // Foreign key to departments
             $table->timestamps();
         });
 

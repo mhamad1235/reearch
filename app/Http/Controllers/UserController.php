@@ -28,6 +28,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'department_id' => 'required|exists:departments,id',
             'class' => 'required|integer|between:1,4',
+            'assigned_classes'=>'required',
             'password' => 'required|string|min:6|confirmed',
         ]);
     
@@ -72,5 +73,12 @@ class UserController extends Controller
     {
         $user->delete();
         return redirect()->route('teacher.users.index')->with('success', 'User deleted.');
+    }
+
+    public function show(){
+        $user = auth()->user();
+        $absences = $user->absencesAsStudent()->with('teacher')->orderByDesc('date')->get();
+    
+         return view('admin.teachers.users.show-absence',compact('absences')) ;   
     }
 }

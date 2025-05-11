@@ -57,25 +57,27 @@ class RolesAndUsersSeeder extends Seeder
         // Create users and assign roles
         $adminUser = User::firstOrCreate(
             ['email' => 'admin@example.com'],
-            ['name' => 'Admin User', 'password' => Hash::make('password')]
+            ['name' => 'Admin User', 'password' => Hash::make('password'),'department_id'=>1]
         );
         $adminUser->assignRole($admin);
 
         $headUser = User::firstOrCreate(
             ['email' => 'head@example.com'],
-            ['name' => 'Head of Department', 'password' => Hash::make('password')]
+            ['name' => 'Head of Department', 'password' => Hash::make('password'),'department_id'=>1]
         );
         $headUser->assignRole($head);
 
         $teacherUser = User::firstOrCreate(
             ['email' => 'teacher@example.com'],
-            ['name' => 'Teacher User', 'password' => Hash::make('password')]
+            ['name' => 'Teacher User', 'password' => Hash::make('password'),
+            'department_id'=>1,
+            'assigned_classes'=>['class A Morining','class B morning']]
         );
         $teacherUser->assignRole($teacher);
 
         $regularUser = User::firstOrCreate(
             ['email' => 'user@example.com'],
-            ['name' => 'Regular User', 'password' => Hash::make('password')]
+            ['name' => 'Regular User', 'password' => Hash::make('password'),'department_id'=>1]
         );
         $regularUser->assignRole($user);
 

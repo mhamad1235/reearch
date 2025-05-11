@@ -9,7 +9,12 @@ class StudentController extends Controller
 {
     public function teachers()
 {
-    $teachers = User::role('teacher')->with('courses')->get();
+    $teachers = User::role('teacher')
+    ->where('department_id', auth()->user()->department_id)
+    ->where('class',auth()->user()->class) // Use department_id instead of user ID
+    ->with('courses')
+    ->get();
+
     return view('subjects.index', compact('teachers'));
 }
 

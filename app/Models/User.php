@@ -23,8 +23,13 @@ class User extends Authenticatable
         'email',
         'department_id',
         'password',
+        'assigned_classes',
         'class'
     ];
+    protected $casts = [
+        'assigned_classes' => 'array',
+    ];
+
 
     /**
      * The attributes that should be hidden for serialization.
@@ -52,10 +57,21 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Department::class);
     }
-    
+
     public function courses()
 {
     return $this->hasMany(Course::class, 'teacher_id');
 }
+  // Absences where this user is a student
+  public function absencesAsStudent()
+  {
+      return $this->hasMany(Absence::class, 'student_id');
+  }
+
+  // Absences where this user is a teacher
+  public function absencesAsTeacher()
+  {
+      return $this->hasMany(Absence::class, 'teacher_id');
+  }
 
 }

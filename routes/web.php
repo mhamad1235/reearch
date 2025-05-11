@@ -7,11 +7,11 @@ use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\TeacherStudentController;
 
 
 Route::get('/', function () {
-    return redirect('/login');
+  return view('welcome');
 });
 
 Auth::routes();
@@ -26,6 +26,7 @@ Route::get('language/{lang}', function ($lang) {
     return redirect()->back();
 })->name('change.language');
 
+
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/departments', [AdminController::class, 'index'])->name('admin.departments');
@@ -34,20 +35,23 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/departments/{department}/edit', [AdminController::class, 'edit'])->name('admin.departments.edit');
     Route::put('/admin/departments/{department}', [AdminController::class, 'update'])->name('admin.departments.update');
     Route::delete('/admin/departments/{department}', [AdminController::class, 'destroy'])->name('admin.departments.destroy');
+      Route::get('/student-dashboard', function () {
+        return view('student-dashboard');
+    })->name('student.dashboard');
 });
 
 Route::middleware(['auth'])->group(function () {
     // List head of department users
     Route::get('/admin/heads-of-department', [HeadOfDepartmentUserController::class, 'index'])->name('head_of_department_users.index');
-    
+
     // Create new head of department user
     Route::get('/admin/heads-of-department/create', [HeadOfDepartmentUserController::class, 'create'])->name('head_of_department_users.create');
     Route::post('/admin/heads-of-department', [HeadOfDepartmentUserController::class, 'store'])->name('head_of_department_users.store');
-    
+
     // Edit head of department user
     Route::get('/admin/heads-of-department/{user}/edit', [HeadOfDepartmentUserController::class, 'edit'])->name('head_of_department_users.edit');
     Route::put('/admin/heads-of-department/{user}', [HeadOfDepartmentUserController::class, 'update'])->name('head_of_department_users.update');
-    
+
     // Delete head of department user
     Route::delete('/admin/heads-of-department/{user}', [HeadOfDepartmentUserController::class, 'destroy'])->name('head_of_department_users.destroy');
 });
@@ -74,10 +78,21 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/courses', [CourseController::class, 'store'])->name('teacher.courses.store');
 
 });
+Route::middleware(['auth'])->group(function () {
+    Route::get('/teacher/students', [TeacherStudentController::class, 'index'])->name('teacher.students');
+    Route::post('/teacher/absences', [TeacherStudentController::class, 'store'])->name('teacher.absences.store');
+    Route::get('/teacher/absences', [TeacherStudentController::class, 'show'])->name('teacher.show');
+    Route::delete('/teacher/absences/{id}', [TeacherStudentController::class, 'destroy'])->name('teacher.absences.destroy');
+});
 
 Route::middleware(['auth'])->prefix('student')->group(function () {
     Route::get('/subjects', [StudentController::class, 'teachers'])->name('student.subject');
     Route::get('/subjects/{teacher}/courses', [StudentController::class, 'teacherCourses'])->name('student.subject.courses');
+});
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/student/absence', [UserController::class, 'show'])->name('student.absence');
+
 });
 
 Route::middleware(['auth'])->group(function () {

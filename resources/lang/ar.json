@@ -1,0 +1,68 @@
+{
+"Login":"چوونەژوورەوە",
+ "Departments": "بەشەکان",
+ "Manage Heads of Department": "ڕێکخستنی سەرۆک بەشەکان",
+ "Teachers": "مامۆستاکان",
+  "Students": "خوێندکارەکان",
+  "My Courses": "کۆڕسەکانم",
+  "Absences": "غیابات",
+   "Absence": "غیابات",
+    "No menu available": "هیج مینوەک بەردەست نیە",
+   "Please log in to see the menu": "تکایە لۆگئین ببە بۆ سەیری مینوو",
+   "Home":"ماڵەوە",
+   "About":"دەربارە",
+   "Courses":"كۆڕسەکان",
+   "Contact":"پەیوەندی",
+   "high-quality online training courses.":"خولی ڕاهێنانی ئۆنلاین بە کوالیتی بەرز",
+   "Empowering your future with free":"بەهێزکردنی داهاتووت بە خۆڕایی",
+   "Get Started":"دەستپێبکە",
+     "Welcome to Edusite": "بەخێربێیت  ",
+  "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.": "ئەوەی دەبینیت، زانیارییەکی پڕپەروەردەیی و ڕووناکییە.",
+
+  "Online Courses": "کۆرسە ئۆنلاینەکان",
+  "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.": "کۆرسەکان بە شێوەیەکی فێرکاری و بە فەرمی پێشکەش دەکرێن، بەردەوامی فێرکاری بەهێز دەکات.",
+
+  "Expert Teachers": "مامۆستایانی شارەزایی",
+  "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati._2": "فێرکاری لەلایەن مامۆستایانی شارەزایەوە، بە توانا و ئاگادارییەکی گەورە دەبێتە سەرچاوەی فێرکاری.",
+
+  "Community": "کۆمەڵگا",
+  "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati._3": "بە هاوبەش بوون و هاوپەیوەندی فێرکاری بەشدار بن لە کۆمەڵگایەکی فێرکاری و پەرەپێدان.",
+    "Explore Courses": "گەڕان لەسەر کۆرسەکان",
+  "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.": "دەستپێبکە بە فێرکارییەکی بەرز و بێخەم.",
+
+  "Beginner to Pro in Excel: Financial Modeling and Valuation": "لە سەرەتایی تا پێشوەری لە Excel: مۆدێلکردنی دارایی و هاوپێچی",
+  "Business": "کەسبوکار",
+  "Free": "بێ‌بەرامبەر",
+
+  "Introduction to CSS": "دەستپێکردن بە CSS",
+  "Web Design": "دیزانێنی وێب",
+  "Premium": "پارەی پێویستە",
+
+  "The Ultimate Drawing Course | From Beginner To Advanced": "کۆرسی سەروەری وێنەکێشان | لە سەرەتایی تا پێشوەری",
+  "Drawing": "وێنەکێشان",
+
+  "The Complete Web Development Course": "کۆرسی تەواوی پەرەسەندنی وێب",
+  "Web Development": "پەرەسەندنی وێب",
+
+  "PHP Tips, Tricks, and Techniques": "ڕاهێنان، هیلە و شێوازەکانی PHP",
+
+  "All You Need To Know About Web Design": "هەموو شتێک کە پێویستە بزانیت دەربارەی دیزاینی وێب",
+
+  "How to Get Started in Photography": "چۆن دەستپێبکەی بە وێنەگر",
+  "Photography": "وێنەگر",
+
+  "Typography From A to Z": "تایپۆگرافی لە A تا Z",
+  "Typography": "تایپۆگرافی",
+  "More Courses":"کۆرسی زیاتر",
+    "Why Edusite": "بۆچی ئێمە؟",
+  "Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.": "ژیان وەک کتێبێکە، فێرکارییەکی جوان و ڕووناك بەخۆی دەگرێت.",
+  "Online Courses": "کۆرسە سەرهێڵەکان",
+  "Ceteros fuisset mei no, soleat epicurei adipiscing ne vis. Et his suas veniam nominati.": "کۆرسیەکان بەشێوەی سەرهێڵ و ڕێکخراو فێردەکەن، بەپێی پێویستی تۆ.",
+  "Expert Teachers": "مامۆستایە کارەسازەکان",
+  "Community": "کۆمەڵگا",
+  "Persius imperdiet incorrupte et qui, munere nusquam et nec.": "پەیوەندیدار و فێری بەرز، بێ زەحمەت و ڕووناك.",
+  "No vel facete sententiae, quodsi dolores no quo, pri ex tamquam interesset necessitatibus. Te denique cotidieque delicatissimi sed. Eu doming epicurei duo. Sit ea perfecto deseruisse theophrastus. At sed malis hendrerit, elitr deseruisse in sit, sit ei facilisi mediocrem.": "زانیاری بەبەرهەمەکانی کۆمەڵگا، هاوکاری مامۆستایان، و فێرکاری بەپێی پێویستەکانت، ئەم جێگەیە بۆت درووستکراوە.",
+  "Sign In":"تێپەڕ بوون",
+  "Forgot Password":"بیرچوونەرەی وشەی نهێنی"
+
+}

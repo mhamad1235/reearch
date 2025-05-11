@@ -65,7 +65,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Riyadh', // Or another valid PHP timezone
+
 
     /*
     |--------------------------------------------------------------------------
