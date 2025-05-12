@@ -29,7 +29,7 @@
                     @else
                         <div class="list-group list-group-flush rounded-3">
                             @foreach($teachers as $teacher)
-                            <a href="{{ route('student.subject.course', $teacher->id) }}" 
+                            <a href="{{ route('student.subject.courses', $teacher->id) }}" 
                                class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3 px-4 teacher-item">
                                 <i class="bi bi-person-square fs-5 text-primary"></i>
                                 <div>

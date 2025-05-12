@@ -8,7 +8,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeacherStudentController;
-
+use App\Http\Controllers\Admin\MarkController;
 
 Route::get('/', function () {
   return view('welcome');
@@ -73,7 +73,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/courses', [CourseController::class, 'index'])->name('teacher.courses');
+    Route::get('/courses', [CourseController::class, 'index'])->name('teacher.course');
     Route::get('/courses/create', [CourseController::class, 'create'])->name('teacher.courses.create');
     Route::post('/courses', [CourseController::class, 'store'])->name('teacher.courses.store');
 
@@ -87,7 +87,12 @@ Route::middleware(['auth'])->group(function () {
 
 Route::middleware(['auth'])->prefix('student')->group(function () {
     Route::get('/subjects', [StudentController::class, 'teachers'])->name('student.subject');
-    Route::get('/subjects/{teacher}/courses', [StudentController::class, 'teacherCourses'])->name('student.subject.courses');
+    Route::get('/subjects/{teacher}/courses', [StudentController::class, 'teacherCourses'])->name('student.subject.course');
+    Route::get('/marks', [StudentController::class, 'mark'])->name('student.marks');
+    Route::get('/teacher/{id}/mark-file', [StudentController::class, 'showMarkFile'])
+    ->name('student.subject.courses');
+
+
 });
 
 Route::middleware(['auth'])->group(function () {
@@ -103,3 +108,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/users/{user}', [UserController::class, 'update'])->name('teacher.users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('teacher.users.destroy');
 });
+
+Route::middleware(['auth'])->prefix('teacher')->group(function () {
+    Route::get('/marks', [MarkController::class, 'index'])->name('teacher.courses');
+    Route::post('/marks/upload', [MarkController::class, 'upload'])->name('teacher.marks.upload');
+    Route::get('/marks/files', [MarkController::class, 'files'])->name('teacher.marks.files');
+
+});
+

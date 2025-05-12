@@ -110,9 +110,21 @@
                 </li>
             @elseif($role === 'teacher')
                 <li class="list-group-item sidebar-item">
-                    <a href="{{ route('teacher.courses') }}">
+                    <a href="{{ route('teacher.course') }}">
                         <i class="fas fa-book-open sidebar-icon"></i>
                         {{ __('My Courses') }}
+                    </a>
+                </li>
+                   <li class="list-group-item sidebar-item">
+                    <a href="{{ route('teacher.courses') }}">
+                        <i class="fas fa-book-open sidebar-icon"></i>
+                        {{ __('Marks') }}
+                    </a>
+                </li>
+                  <li class="list-group-item sidebar-item">
+                    <a href="{{ route('teacher.marks.files') }}">
+                        <i class="fas fa-book sidebar-icon"></i>
+                        {{ __('Files') }}
                     </a>
                 </li>
                 <li class="list-group-item sidebar-item">
@@ -132,6 +144,12 @@
                     <a href="{{ route('student.subject') }}">
                         <i class="fas fa-book sidebar-icon"></i>
                         {{ __('My Courses') }}
+                    </a>
+                </li>
+                 <li class="list-group-item sidebar-item">
+                    <a href="{{ route('student.marks') }}">
+                        <i class="fas fa-book sidebar-icon"></i>
+                        {{ __('My Marks') }}
                     </a>
                 </li>
                 <li class="list-group-item sidebar-item">

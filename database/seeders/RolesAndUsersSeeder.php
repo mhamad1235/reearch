@@ -71,13 +71,15 @@ class RolesAndUsersSeeder extends Seeder
             ['email' => 'teacher@example.com'],
             ['name' => 'Teacher User', 'password' => Hash::make('password'),
             'department_id'=>1,
+            "class"=>1,
             'assigned_classes'=>['class A Morining','class B morning']]
         );
         $teacherUser->assignRole($teacher);
 
         $regularUser = User::firstOrCreate(
             ['email' => 'user@example.com'],
-            ['name' => 'Regular User', 'password' => Hash::make('password'),'department_id'=>1]
+            ['name' => 'Regular User', 'password' => Hash::make('password'),'department_id'=>1,
+              "class"=>1]
         );
         $regularUser->assignRole($user);
 

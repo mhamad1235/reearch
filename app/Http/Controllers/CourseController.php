@@ -37,7 +37,7 @@ public function store(Request $request)
         'pdf_path' => 'assets/pdf/' . $filename,
     ]);
 
-    return redirect()->route('teacher.courses')->with('success', 'Course added successfully');
+    return redirect()->route('teacher.course')->with('success', 'Course added successfully');
 }
 
 
