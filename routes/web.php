@@ -89,7 +89,7 @@ Route::middleware(['auth'])->prefix('student')->group(function () {
     Route::get('/subjects', [StudentController::class, 'teachers'])->name('student.subject');
     Route::get('/subjects/{teacher}/courses', [StudentController::class, 'teacherCourses'])->name('student.subject.course');
     Route::get('/marks', [StudentController::class, 'mark'])->name('student.marks');
-    Route::get('/teacher/{id}/mark-file', [StudentController::class, 'showMarkFile'])
+Route::get('/teacher/{teacher}/mark-file/{file}', [StudentController::class, 'showMarkFile'])
     ->name('student.subject.courses');
 
 

@@ -28,16 +28,24 @@
                         </div>
                     @else
                         <div class="list-group list-group-flush rounded-3">
-                            @foreach($teachers as $teacher)
-                            <a href="{{ route('student.subject.courses', $teacher->id) }}" 
-                               class="list-group-item list-group-item-action d-flex align-items-center gap-3 py-3 px-4 teacher-item">
-                                <i class="bi bi-person-square fs-5 text-primary"></i>
-                                <div>
-                                    <h6 class="mb-0 fw-medium">{{ $teacher->name }}</h6>
-                                    <small class="text-muted">Department of {{ $teacher->department->name ?? 'General Studies' }}</small>
-                                </div>
-                            </a>
-                            @endforeach
+                          @foreach($teachers as $teacher)
+    <div class="list-group-item d-flex align-items-center gap-3 py-3 px-4 teacher-item">
+        <i class="bi bi-person-square fs-5 text-primary"></i>
+        <div>
+            <h6 class="mb-0 fw-medium">{{ $teacher->name }}</h6>
+
+            {{-- Show each of this teacher's mark files --}}
+            @foreach ($markFiles->where('teacher_id', $teacher->id) as $item)
+                <a href="{{ route('student.subject.courses', ['teacher' => $teacher->id, 'file' => $item->id]) }}" class="btn btn-sm btn-outline-primary my-1">
+                    View File: {{ $item->original_name }}
+                </a>
+            @endforeach
+<br>
+            <small class="text-muted">Department of {{ $teacher->department->name ?? 'General Studies' }}</small>
+        </div>
+    </div>
+@endforeach
+
                         </div>
                     @endif
                 </div>
