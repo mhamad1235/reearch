@@ -89,6 +89,12 @@
                         {{ __('Departments') }}
                     </a>
                 </li>
+                 <li class="list-group-item sidebar-item">
+        <a href="{{ route('posts.index') }}">
+            <i class="fas fa-thumbtack sidebar-icon"></i>
+            {{ __('Posts') }}
+        </a>
+    </li>
                 <li class="list-group-item sidebar-item">
                     <a href="{{ route('head_of_department_users.index') }}">
                         <i class="fas fa-user-tie sidebar-icon"></i>

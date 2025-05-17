@@ -9,13 +9,22 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeacherStudentController;
 use App\Http\Controllers\Admin\MarkController;
-
-Route::get('/', function () {
-  return view('welcome');
-});
+use App\Http\Controllers\Admin\PostController;
+use App\Models\Post;
+use Illuminate\Support\Facades\App;
 
 Auth::routes();
+ Route::get('/', function () {
+    $locale = App::getLocale(); // e.g., 'en' or 'ku'
+    if ($locale=='ar') {
+        $locale='ku';
+    }
+    $posts = Post::select("id", "image", "name_$locale as name", "description_$locale as description")
+        ->latest()
+        ->get();
 
+    return view('welcome', compact('posts'));
+});
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('language/{lang}', function ($lang) {
     if (!in_array($lang, ['en', 'ar'])) {
@@ -76,6 +85,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/courses', [CourseController::class, 'index'])->name('teacher.course');
     Route::get('/courses/create', [CourseController::class, 'create'])->name('teacher.courses.create');
     Route::post('/courses', [CourseController::class, 'store'])->name('teacher.courses.store');
+    Route::resource('posts', PostController::class);
 
 });
 Route::middleware(['auth'])->group(function () {

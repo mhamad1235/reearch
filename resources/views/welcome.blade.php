@@ -13,21 +13,21 @@
 		<link href="https://fonts.googleapis.com/css?family=Lato:700%7CMontserrat:400,600" rel="stylesheet">
 
 		<!-- Bootstrap RTL/LTR -->
-	
+
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet" integrity="sha384-dpuaG1suU0eT09tx5plCaHSTWQElEALj4pFo4gXqZnlEokjXRQEiN9HAWBCTeGul" crossorigin="anonymous">
 
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-	
+
 
 		<!-- Font Awesome Icon -->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 
 		<!-- Custom stlylesheet -->
-	
+
 			<link rel="stylesheet" href="{{ asset('assets/css/style-rtl.css') }}">
-	
+
 			<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-	
+
 		<style></style>
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -51,7 +51,7 @@
 					<!-- /Logo -->
 
 					<!-- Mobile toggle -->
-				
+
 					<!-- /Mobile toggle -->
 				</div>
 
@@ -90,7 +90,7 @@
 
 					<!-- /Logo -->
 
-			
+
 					{{-- <button  style="background: none; border:none;text-decoration:none;height:90px;width:90px" class="navbar-toggle">
 							 <a style="height: 100%;width:100%" class="logo" href="{{ route('change.language', app()->getLocale() === 'ar' ? 'en' : 'ar') }}">
                     🌐 {{ app()->getLocale() === 'ar' ? '' : '' }}
@@ -143,6 +143,35 @@
 		<!-- /Home -->
 
 		<!-- About -->
+        <section class="posts-section py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2>{{ __('Latest News & Updates') }}</h2>
+            <p class="lead text-muted">{{ __('Stay informed with the latest articles and updates from Edusite.') }}</p>
+        </div>
+
+        <div class="row g-4">
+            @forelse($posts as $post)
+                <div class="col-12">
+                    <article class="card shadow-sm border-0 rounded-3 d-flex flex-row align-items-start" style="min-height: 250px;">
+                        @if($post->image)
+                            <img src="{{ asset($post->image) }}" alt="{{ $post->name }}"
+                                style="width: 350px; height: 250px; object-fit: cover; border-top-left-radius: .75rem; border-bottom-left-radius: .75rem;">
+                        @endif
+                        <div class="card-body d-flex flex-column ms-3">
+                            <h4 class="card-title">{{ $post->name }}</h4>
+                            <p class="card-text flex-grow-1">{{ Str::limit($post->description, 300) }}</p>
+
+                        </div>
+                    </article>
+                </div>
+            @empty
+                <p class="text-center text-muted">{{ __('No posts available at the moment.') }}</p>
+            @endforelse
+        </div>
+    </div>
+</section>
+
 		<div id="about" class="section">
 
 			<!-- container -->
@@ -151,8 +180,10 @@
 				<!-- row -->
 				<div class="row">
 
-				
+
                     <div class="col-md-6">
+
+
     <div class="section-header">
         <h2>{{ __('Welcome to Edusite') }}</h2>
         <p class="lead">{{ __('Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.') }}</p>
@@ -470,7 +501,7 @@
 							<li><a href="index.html">{{__('Home')}}</a></li>
 							<li><a href="#">{{__('About')}}</a></li>
 							<li><a href="#">{{__('Courses')}}</a></li>
-						
+
 							<li><a href="contact.html">{{__('Contact')}}</a></li>
 						</ul>
 					</div>
@@ -511,7 +542,7 @@
 		</footer>
 		<!-- /Footer -->
 
-	
+
 		<!-- /preloader -->
 
 
