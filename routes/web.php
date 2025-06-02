@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\TeacherStudentController;
 use App\Http\Controllers\Admin\MarkController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\HomeController;
 use App\Models\Post;
 use Illuminate\Support\Facades\App;
 
@@ -25,7 +26,7 @@ Auth::routes();
 
     return view('welcome', compact('posts'));
 });
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('language/{lang}', function ($lang) {
     if (!in_array($lang, ['en', 'ar'])) {
         abort(400);

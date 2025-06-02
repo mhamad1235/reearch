@@ -130,7 +130,7 @@
                     <div class="row g-0">
                         <!-- University Branding Section -->
                         <div class="col-md-5 auth-illustration d-none d-md-flex">
-                            <img src="/assets/images/slider-image1.jpg" alt="University Logo" class="university-logo">
+                            <img src="/assets/images/polt.jpg" alt="University Logo" class="university-logo">
                             <div class="text-center">
                                 <h3 class="mt-4 fw-semibold"> Authentication System</h3>
                                 <p class="mb-0">Secure access to academic resources</p>
