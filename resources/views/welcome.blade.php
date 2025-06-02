@@ -59,7 +59,7 @@
 				{{-- <nav class="navbar navbar-expand-lg">
 					<div class="collapse navbar-collapse" id="navbarNav">
 						<ul class="navbar-nav {{ app()->getLocale() === 'ar' ? 'me-auto' : 'ms-auto' }}">
-							<li class="nav-item"><a class="nav-link" href="index.html">__(Home)</a></li>
+							<li class="nav-item"><a class="nav-link" href="#home">__(Home)</a></li>
 							<li class="nav-item"><a class="nav-link" href="#About">About</a></li>
 							<li class="nav-item"><a class="nav-link" href="#Courses">Courses</a></li>
 							<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
